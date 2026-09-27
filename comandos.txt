@@ -1,0 +1,43 @@
+Compilar:
+
+cl /EHsc /MD /O2 src\PA03.cpp src\Scene.cpp src\camera.cpp src\curves.cpp src\Lighting.cpp src\Texture.cpp /D FREEGLUT_STATIC /D NDEBUG /I freeglut\include /I include /link /LIBPATH:freeglut\lib freeglut_static.lib opengl32.lib glu32.lib winmm.lib /OUT:PA03.exe
+
+
+Ejecutar:
+
+.\PA03.exe
+
+
+Interacción con el teclado:
+
+← / → : Girar la cámara alrededor de la escena
+↑ / ↓ : Subir o bajar la altura de la cámara
+
+Z : Acercar la cámara
+X : Alejar la cámara
+
+P : Cambiar entre proyección perspectiva y ortográfica
+
+B : Mostrar u ocultar los puntos de control de la curva Bézier
+
+M : Cambiar el mate burilado entre modo sólido y wireframe
+
+A / D : Girar el monumento
+
+Q / E : Girar toda la escena
+
+1 : Activar o desactivar la luz puntual
+
+2 : Activar o desactivar la luz direccional
+
+3 : Cambiar la intensidad de la luz principal
+
+T : Activar o desactivar la textura de piedra del portal
+
+ESC : Cerrar el programa
+
+A / D : Rotar el monumento jerárquico
+
+Q / E : Rotar toda la escena
+
+ESC : Cerrar la aplicación
