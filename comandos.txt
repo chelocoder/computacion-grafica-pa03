@@ -9,35 +9,23 @@ Ejecutar:
 
 
 Interacción con el teclado:
-
 ← / → : Girar la cámara alrededor de la escena
-↑ / ↓ : Subir o bajar la altura de la cámara
-
+↑ / ↓ : Subir o bajar la altura de la cámara  
 Z : Acercar la cámara
-X : Alejar la cámara
-
-P : Cambiar entre proyección perspectiva y ortográfica
-
-B : Mostrar u ocultar los puntos de control de la curva Bézier
-
-M : Cambiar el mate burilado entre modo sólido y wireframe
-
-A / D : Girar el monumento
-
-Q / E : Girar toda la escena
-
-1 : Activar o desactivar la luz puntual
-
-2 : Activar o desactivar la luz direccional
-
-3 : Cambiar la intensidad de la luz principal
-
-T : Activar o desactivar la textura de piedra del portal
-
+X : Alejar la cámara  
+P : Cambiar entre proyección perspectiva y ortográfica  
+B : Mostrar u ocultar los puntos de control de la curva Bézier  
+M : Cambiar el mate burilado entre modo sólido y wireframe  
+A / D : Girar el monumento  
+Q / E : Girar toda la escena  
+1 : Activar o desactivar la luz puntual GL_LIGHT0  
+2 : Activar o desactivar la luz direccional GL_LIGHT1  
+3 : Cambiar la intensidad de la luz principal  
+4 / 5 : Disminuir o aumentar la velocidad de la animación de la luz puntual  
+6 : Fijar la luz puntual en 0°  
+7 : Fijar la luz puntual en 90°  
+8 : Fijar la luz puntual en 180°  
+9 : Fijar la luz puntual en 270°  
+R : Activar o pausar la animación de la luz puntual  
+T : Activar o desactivar la textura de piedra del portal  
 ESC : Cerrar el programa
-
-A / D : Rotar el monumento jerárquico
-
-Q / E : Rotar toda la escena
-
-ESC : Cerrar la aplicación
