@@ -29,6 +29,7 @@ void display() {
     configurarIluminacion();
 
     dibujarEscena();
+    dibujarIndicadorLuz();
 
     glutSwapBuffers();
 }
@@ -36,6 +37,23 @@ void display() {
 void reshape(int width, int height) {
     redimensionarCamara(width, height);
     glutPostRedisplay();
+}
+
+void timer(int value) {
+    if (animacionLuzActiva) {
+        anguloLuz += velocidadLuz;
+
+        if (anguloLuz >= 360.0f)
+            anguloLuz -= 360.0f;
+
+        glutPostRedisplay();
+    }
+
+    glutTimerFunc(
+        16,
+        timer,
+        0
+    );
 }
 
 void teclado(unsigned char tecla, int x, int y) {
@@ -114,7 +132,70 @@ void teclado(unsigned char tecla, int x, int y) {
                 distanciaCamara = 50.0f;
 
             break;
+        case 'r':
+        case 'R':
+            animacionLuzActiva =
+                !animacionLuzActiva;
 
+            printf(
+                "Animacion de luz: %s\n",
+                animacionLuzActiva
+                    ? "ACTIVADA"
+                    : "PAUSADA"
+            );
+
+            break;
+
+        case '4':
+            velocidadLuz -= 0.25f;
+
+            if (velocidadLuz < 0.25f)
+                velocidadLuz = 0.25f;
+
+            printf(
+                "Velocidad luz: %.2f\n",
+                velocidadLuz
+            );
+
+            break;
+
+        case '5':
+            velocidadLuz += 0.25f;
+
+            if (velocidadLuz > 4.0f)
+                velocidadLuz = 4.0f;
+
+            printf(
+                "Velocidad luz: %.2f\n",
+                velocidadLuz
+            );
+
+            break;
+        
+        case '6':
+            animacionLuzActiva = false;
+            anguloLuz = 0.0f;
+            printf("Luz fija: 0 grados\n");
+            break;
+
+        case '7':
+            animacionLuzActiva = false;
+            anguloLuz = 90.0f;
+            printf("Luz fija: 90 grados\n");
+            break;
+
+        case '8':
+            animacionLuzActiva = false;
+            anguloLuz = 180.0f;
+            printf("Luz fija: 180 grados\n");
+            break;
+
+        case '9':
+            animacionLuzActiva = false;
+            anguloLuz = 270.0f;
+            printf("Luz fija: 270 grados\n");
+            break;
+        
         case 27:
             exit(0);
             break;
@@ -179,6 +260,12 @@ int main(int argc, char** argv) {
     glutReshapeFunc(reshape);
     glutKeyboardFunc(teclado);
     glutSpecialFunc(teclasEspeciales);
+
+    glutTimerFunc(
+        16,
+        timer,
+        0
+    );
 
     glutMainLoop();
 
